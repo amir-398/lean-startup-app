@@ -1,14 +1,24 @@
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import COLORS from "@constants/COLORS";
-import HomeStack from "./stacks/HomeStack";
+import { TabBar } from "@/components/components";
 import ROUTES from "@/constants/ROUTES";
-import FONTS from "@constants/FONTS";
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
 import { getActiveScreen } from "@/utils/routes";
+import {
+  eventIcon,
+  homeIcon,
+  notificationIcon,
+  profilIcon,
+  sessionsIcon,
+} from "@assets/icons";
+import COLORS from "@constants/COLORS";
+import FONTS from "@constants/FONTS";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { Image } from "react-native";
+import HomeStack from "./stacks/HomeStack";
+import {
+  default as FourthStack,
+  default as ProfilStack,
+} from "./stacks/ProfilStack";
 import SecondStack from "./stacks/SecondStack";
 import ThirdStack from "./stacks/ThirdStack";
-import FourthStack from "./stacks/FourthScreen";
-
 const Tab = createBottomTabNavigator();
 const hideTabBarScreens = [];
 
@@ -20,42 +30,51 @@ export default function MainNavigation() {
       screenOptions={({ route }) => ({
         tabBarIcon: ({ focused, color }) => {
           let iconName;
-          if (route.name === ROUTES.homeScreen) {
-            iconName = focused ? "home" : "home";
-          } else if (route.name === "Communauté") {
-            iconName = focused ? "user-group" : "user-group";
-          } else if (route.name === "Mes soirées") {
-            iconName = focused ? "champagne-glasses" : "champagne-glasses";
-          } else if (route.name === "Chat") {
-            iconName = focused ? "message" : "message";
-          } else if (route.name === "Notifications") {
-            iconName = focused ? "bell" : "bell";
+          if (route.name === ROUTES.HOME_SCREEN) {
+            iconName = focused ? homeIcon : homeIcon;
+          } else if (route.name === ROUTES.EVENTS_SCREEN) {
+            iconName = focused ? eventIcon : eventIcon;
+          } else if (route.name === ROUTES.NOTIFICATIONS_SCREEN) {
+            iconName = focused ? notificationIcon : notificationIcon;
+          } else if (route.name === ROUTES.SESSIONS_SCREEN) {
+            iconName = focused ? sessionsIcon : sessionsIcon;
+          } else if (route.name === ROUTES.PROFIL_SCREEN) {
+            iconName = focused ? profilIcon : profilIcon;
           }
-          return (
-            // <FontAwesomeIcon icon={["fas", iconName]} size={22} color={color} />
-            null
-          );
+          return <Image source={iconName} className="size-8" />;
         },
 
         tabBarActiveTintColor: COLORS.primaryColor,
-        tabBarInactiveTintColor: "#fff",
+        tabBarInactiveTintColor: "red",
         tabBarStyle: {
-          backgroundColor: COLORS.backgroundColor,
-          borderTopWidth: 0,
+          position: "absolute",
+          bottom: 80,
+          backgroundColor: "#fff",
           display: "flex",
+          borderRadius: 20,
+          width: "90%",
+          height: 60,
+          alignItems: "center",
         },
         tabBarLabelStyle: {
           fontFamily: FONTS.primaryFontBold,
           fontWeight: "600",
+          color: COLORS.textColor,
         },
         headerShown: false,
-        navigationBarColor: "red",
       })}
+      tabBar={(props) => {
+        if (hideTabBarScreens.includes(currentRouteName)) {
+          return null;
+        }
+        return <TabBar {...props} />;
+      }}
     >
-      <Tab.Screen name={ROUTES.homeScreen} component={HomeStack} />
-      <Tab.Screen name="Communauté" component={SecondStack} />
-      <Tab.Screen name="Mes soirées" component={ThirdStack} />
-      <Tab.Screen name="Chat" component={FourthStack} />
+      <Tab.Screen name={ROUTES.HOME_SCREEN} component={HomeStack} />
+      <Tab.Screen name={ROUTES.EVENTS_SCREEN} component={SecondStack} />
+      <Tab.Screen name={ROUTES.NOTIFICATIONS_SCREEN} component={ThirdStack} />
+      <Tab.Screen name={ROUTES.SESSIONS_SCREEN} component={FourthStack} />
+      <Tab.Screen name={ROUTES.PROFIL_SCREEN} component={ProfilStack} />
     </Tab.Navigator>
   );
 }

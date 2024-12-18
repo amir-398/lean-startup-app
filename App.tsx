@@ -1,3 +1,5 @@
+import COLORS from "@constants/COLORS";
+import { useReactQueryDevTools } from "@dev-plugins/react-query";
 import {
   Poppins_300Light,
   Poppins_400MRegular,
@@ -7,18 +9,17 @@ import {
   useFonts,
 } from "@expo-google-fonts/poppins";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
-import "expo-dev-client";
-import COLORS from "@constants/COLORS";
-import AppNavigation from "./src/navigation/AppNavigation";
-import { SafeAreaProvider } from "react-native-safe-area-context";
-import { KeyboardProvider } from "react-native-keyboard-controller";
-import { useReactQueryDevTools } from "@dev-plugins/react-query";
-import { QueryClient, QueryClientProvider } from "react-query";
 import "@utils/fontAwesomeConfig";
+import "expo-dev-client";
+
+import { KeyboardProvider } from "react-native-keyboard-controller";
+import { SafeAreaProvider } from "react-native-safe-area-context";
+import { QueryClient, QueryClientProvider } from "react-query";
 import "./src/global.css";
+import AppNavigation from "./src/navigation/AppNavigation";
 const queryClient = new QueryClient();
 export default function App() {
-  useReactQueryDevTools(queryClient);
+  useReactQueryDevTools(queryClient as any);
 
   let [fontsLoaded, fontError] = useFonts({
     poppinsLight: Poppins_300Light,
@@ -37,7 +38,7 @@ export default function App() {
       background: COLORS.backgroundColor,
       text: COLORS.textColor,
       navigationBarColor: "red",
-      statusBarColor: "red",
+      statusBarColor: "white",
     },
   };
 

@@ -1,8 +1,8 @@
 import { ActivityIndicator, TouchableOpacity, View } from "react-native";
 import { twMerge } from "tailwind-merge";
 import { tv } from "tailwind-variants";
-import { BtnProps } from "../utils/types";
 import String from "../string";
+import { BtnProps } from "../utils/types";
 
 // height Tailwind Variants
 const heightVr = tv({
@@ -74,7 +74,7 @@ export default function Button({
   // height Tailwind Variants
 
   const stringVariant = () => {
-    if (variant === "tertiary" || variant === "primary") return "primary";
+    if (variant === "tertiary" || variant === "primary") return "white";
     else return "secondary";
   };
 

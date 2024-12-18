@@ -6,16 +6,24 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#B201C3",
-        darkLight: "#151515",
-        secondary: "#D3D3D3",
+        primary: "#168177",
+        secondary: "#0a0f33",
+        thertiary: "#f97e4b",
         error: "#FF0000",
       },
       backgroundColor: {
-        main: "#191A1C",
-        primary: "#B201C3",
-        secondary: "#D3D3D3",
+        main: "#F4F4F4",
         error: "#FF0000",
+      },
+      textColor: {
+        primary: "#858484",
+        secondary: "#f97e4b",
+        dark: "#000",
+        white: "#fff",
+        error: "#FF0000",
+      },
+      borderColor: {
+        primary: "#858484",
       },
       fontFamily: {
         sans: ["Roboto", "sans-serif"],

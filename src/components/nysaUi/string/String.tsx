@@ -8,6 +8,7 @@ const textSizeVr = tv({
   base: "text-lg",
   variants: {
     size: {
+      "3xs": "text-[8px]",
       "2xs": "text-xs",
       xs: "text-sm",
       sm: "text-base",
@@ -38,9 +39,10 @@ const textColorVr = tv({
   base: "text-white",
   variants: {
     variant: {
-      primary: "text-white",
-      secondary: "text-dark",
-      nysa: "text-primary",
+      primary: "text-primary",
+      secondary: "text-secondary",
+      white: "text-white",
+      dark: "text-dark",
       error: "text-error",
       tertiary: "text-gray-400",
       success: "text-green-500",
@@ -48,7 +50,6 @@ const textColorVr = tv({
       warning: "text-yellow-500",
       info: "text-blue-300",
       light: "text-gray-300",
-      dark: "text-black",
     },
   },
 });

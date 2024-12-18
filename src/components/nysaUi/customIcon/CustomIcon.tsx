@@ -1,8 +1,8 @@
-import { Pressable } from "react-native";
-import { useMemo, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { tv } from "tailwind-variants";
+import { useMemo, useState } from "react";
+import { Pressable } from "react-native";
 import { twMerge } from "tailwind-merge";
+import { tv } from "tailwind-variants";
 import { CustomIconProps } from "../utils/types";
 
 // background color variant
@@ -119,7 +119,7 @@ export default function CustomIcon({
   return (
     <Pressable
       className={twMerge(
-        "rounded-full ",
+        "rounded-full",
         wrapper && paddingVr({ size }),
         bgColorVr({ isPressded })
       )}

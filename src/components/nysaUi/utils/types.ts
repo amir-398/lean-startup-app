@@ -36,18 +36,7 @@ export interface StringProps {
   size?: "2xs" | "xs" | "sm" | "md" | "lg" | "xl" | "2xl" | "3xl" | "4xl";
   weight?: "light" | "regular" | "medium" | "semiBold" | "bold";
   content?: string;
-  variant?:
-    | "primary"
-    | "secondary"
-    | "tertiary"
-    | "success"
-    | "danger"
-    | "error"
-    | "warning"
-    | "info"
-    | "light"
-    | "dark"
-    | "nysa";
+  variant?: "primary" | "secondary" | "error" | "dark" | "white";
   children?: string | React.ReactNode;
   textDecoration?: "underline" | "lineThrough";
   mr?: number;

@@ -1,11 +1,11 @@
+import { logo } from "@assets/logo";
 import { Animated } from "react-native";
 import { twMerge } from "tailwind-merge";
 import { tv } from "tailwind-variants";
-
 interface LogoProps {
   className?: string;
   position?: "left" | "center" | "right";
-  size?: "sm" | "md" | "lg";
+  size?: "xs" | "sm" | "md" | "lg";
   mt?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 }
 const logoPositionVariants = tv({
@@ -22,6 +22,7 @@ const logoPositionVariants = tv({
 const sizeVariants = tv({
   variants: {
     size: {
+      xs: "w-32 h-16",
       sm: "w-48 h-24",
       md: "w-60 h-28",
       lg: "w-80 h-36",
@@ -58,7 +59,7 @@ export default function Logo(props: LogoProps) {
   );
   return (
     <Animated.Image
-      source={require("../../../../assets/logo/logo.png")}
+      source={logo}
       className={logoClassName}
       resizeMode={"contain"}
     />
