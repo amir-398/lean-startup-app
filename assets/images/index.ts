@@ -1,3 +1,4 @@
+export { default as confirmationSessionImg } from "./confirmation_session_img.png";
 export { default as playerImg } from "./player.png";
 export { default as sessionImg } from "./session_img.png";
 export { default as sessionUserImg1 } from "./session_user_1.png";

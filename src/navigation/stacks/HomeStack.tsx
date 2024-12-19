@@ -19,7 +19,7 @@ export default function HomeStack() {
         name={ROUTES.HOME_SCREEN}
         component={HomeScreen}
         options={{
-          header: () => <Header screen={ROUTES.homeScreen} />,
+          header: () => <Header screen={ROUTES.HOME_SCREEN} />,
           headerShown: true,
         }}
       />

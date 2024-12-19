@@ -20,6 +20,7 @@ import {
 import SecondStack from "./stacks/SecondStack";
 import ThirdStack from "./stacks/ThirdStack";
 const Tab = createBottomTabNavigator();
+
 const hideTabBarScreens = [
   ROUTES.SESSIONS_SCREEN,
   ROUTES.SESSION_CONFIRMATION_SCREEN,
@@ -27,7 +28,6 @@ const hideTabBarScreens = [
 
 export default function MainNavigation() {
   const { currentRouteName } = getActiveScreen();
-  console.log(currentRouteName);
 
   return (
     <Tab.Navigator
