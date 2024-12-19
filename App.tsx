@@ -1,11 +1,10 @@
 import COLORS from "@constants/COLORS";
 import { useReactQueryDevTools } from "@dev-plugins/react-query";
 import {
-  Poppins_300Light,
-  Poppins_400MRegular,
-  Poppins_500Medium,
-  Poppins_600SemiBold,
-  Poppins_700Bold,
+  Montserrat_400Regular,
+  Montserrat_500Medium,
+  Montserrat_600SemiBold,
+  Montserrat_700Bold,
   useFonts,
 } from "@expo-google-fonts/poppins";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
@@ -22,11 +21,10 @@ export default function App() {
   useReactQueryDevTools(queryClient as any);
 
   let [fontsLoaded, fontError] = useFonts({
-    poppinsLight: Poppins_300Light,
-    poppinsMedium: Poppins_500Medium,
-    poppinsSemiBold: Poppins_600SemiBold,
-    poppinsBold: Poppins_700Bold,
-    poppinsRegular: Poppins_400MRegular,
+    montserratRegular: Montserrat_400Regular,
+    montserratMedium: Montserrat_500Medium,
+    montserratSemiBold: Montserrat_600SemiBold,
+    montserratBold: Montserrat_700Bold,
   });
   if (!fontsLoaded && !fontError) {
     return null;

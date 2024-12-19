@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "start": "NODE_ENV=development expo start",
+    "start": "expo start",
     "android": "expo run:android",
     "build:android:dev:local": "eas build --platform android --profile development --local",
     "doctor": "npx expo-doctor",
