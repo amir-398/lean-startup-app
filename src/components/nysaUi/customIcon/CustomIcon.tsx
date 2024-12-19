@@ -131,7 +131,7 @@ export default function CustomIcon({
       <FontAwesomeIcon
         icon={[iconType, icon]}
         size={IconSizeVr}
-        color={color}
+        color={"#000"}
       />
     </Pressable>
   );

@@ -1,3 +1,5 @@
+import SessionConfirmation from "@/screens/SessionConfirmation";
+import SessionScreen from "@/screens/SessionScreen";
 import { Header } from "@components/components";
 import COLORS from "@constants/COLORS";
 import ROUTES from "@constants/ROUTES";
@@ -20,6 +22,11 @@ export default function HomeStack() {
           header: () => <Header screen={ROUTES.homeScreen} />,
           headerShown: true,
         }}
+      />
+      <Stack.Screen name={ROUTES.SESSIONS_SCREEN} component={SessionScreen} />
+      <Stack.Screen
+        name={ROUTES.SESSION_CONFIRMATION_SCREEN}
+        component={SessionConfirmation}
       />
     </Stack.Navigator>
   );

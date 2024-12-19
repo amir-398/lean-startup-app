@@ -1,3 +1,3 @@
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faHouse } from "@fortawesome/free-solid-svg-icons";
-library.add(faHouse);
+import { faArrowLeft, faHouse } from "@fortawesome/free-solid-svg-icons";
+library.add(faHouse, faArrowLeft);

@@ -20,15 +20,19 @@ import {
 import SecondStack from "./stacks/SecondStack";
 import ThirdStack from "./stacks/ThirdStack";
 const Tab = createBottomTabNavigator();
-const hideTabBarScreens = [];
+const hideTabBarScreens = [
+  ROUTES.SESSIONS_SCREEN,
+  ROUTES.SESSION_CONFIRMATION_SCREEN,
+];
 
 export default function MainNavigation() {
   const { currentRouteName } = getActiveScreen();
+  console.log(currentRouteName);
 
   return (
     <Tab.Navigator
       screenOptions={({ route }) => ({
-        tabBarIcon: ({ focused, color }) => {
+        tabBarIcon: ({ focused }) => {
           let iconName;
           if (route.name === ROUTES.HOME_SCREEN) {
             iconName = focused ? homeIcon : homeIcon;

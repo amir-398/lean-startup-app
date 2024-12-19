@@ -1,6 +1,6 @@
-import { String, Wrapper } from "@/components/nysaUi";
 import { penIcon } from "@assets/icons";
 import { playerImg } from "@assets/images";
+import { String, Wrapper } from "@components/nysaUi";
 import { StatusBar } from "expo-status-bar";
 import React from "react";
 import { Image, View } from "react-native";

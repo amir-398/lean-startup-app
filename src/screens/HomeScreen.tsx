@@ -1,8 +1,9 @@
 import { Button, String, Wrapper } from "@/components/nysaUi";
+import ROUTES from "@/constants/ROUTES";
 import React from "react";
 import { ScrollView, StyleSheet, TextInput, View } from "react-native";
 
-export default function HomeScreen() {
+export default function HomeScreen({ navigation }) {
   return (
     <Wrapper scrollView>
       <View className="bg-white w-full h-80 rounded-lg shadow p-2">
@@ -16,7 +17,10 @@ export default function HomeScreen() {
           placeholder="Indiquez l'horaire de votre partie"
           className="w-2/3 mx-auto   rounded-lg p-2"
         ></TextInput>
-        <Button title="Lancer le matchmacking" />
+        <Button
+          title="Lancer le matchmacking"
+          onPress={() => navigation.navigate(ROUTES.SESSIONS_SCREEN)}
+        />
       </View>
       {/* Parties en cours */}
       <View>

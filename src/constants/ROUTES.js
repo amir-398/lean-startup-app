@@ -4,4 +4,6 @@ export default {
   NOTIFICATIONS_SCREEN: "Notifications",
   SESSIONS_SCREEN: "Sessions",
   PROFIL_SCREEN: "Profile",
+  SESSIONS_SCREEN: "Sessions",
+  SESSION_CONFIRMATION_SCREEN: "Sessions_Confirmation",
 };
