@@ -123,7 +123,7 @@ export default function SessionConfirmation() {
             <View className=" flex h-16 flex-row w-full p-1 border border-gray-500 rounded-xl mt-3">
               <Button
                 title="Confirmer"
-                btnClassName="bg-thertiary flex-1 h-4/5"
+                btnClassName="bg-[#FE5F3C] flex-1 h-4/5"
               />
               <Button
                 title="Annuler"
