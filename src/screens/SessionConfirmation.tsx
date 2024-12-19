@@ -39,12 +39,12 @@ export default function SessionConfirmation() {
               Aujour'hui- 16h
             </String>
           </View>
-          <View className=" flex-1 py-2">
+          <View className="border border-black rounded-full flex-1 py-2">
             <String variant="dark" position="center">
               Durée : 1h
             </String>
           </View>
-          <View className=" flex-1 py-2">
+          <View className="border border-black rounded-full  flex-1 py-2">
             <String variant="dark" position="center">
               Débutant
             </String>
@@ -66,8 +66,8 @@ export default function SessionConfirmation() {
             <Image
               source={peopleImg}
               resizeMode="contain"
-              width={50}
-              height={50}
+              width={40}
+              height={40}
             />
             <View className="flex flex-row w-full border border-gray-500 rounded-xl">
               <View className="flex justify-center p-2 ">
