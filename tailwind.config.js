@@ -27,11 +27,6 @@ module.exports = {
       },
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
-        poppinsLight: ["poppinsLight", "sans-serif"],
-        poppins: ["poppinsRegular", "sans-Roboto"],
-        poppinsSemiBold: ["poppinsSemiBold", "sans-serif"],
-        poppinsBold: ["poppinsBold", "sans-serif"],
-        poppinsMedium: ["PoppinsMedium", "sans-serif"],
       },
     },
   },

@@ -7,3 +7,4 @@ export { default as sessionUserImg3 } from "./session_user_3.png";
 export { default as sessionUserImg4 } from "./session_user_4.png";
 export { default as sessionUserImg5 } from "./session_user_5.png";
 export { default as sessionGroupPeople } from "./sessions_group_people.png";
+export { default as peopleImg } from "./people.png";
