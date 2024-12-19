@@ -1,6 +1,5 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  // NOTE: Update this to include the paths to all of your component files.
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   presets: [require("nativewind/preset")],
   theme: {
@@ -26,8 +25,15 @@ module.exports = {
         primary: "#858484",
       },
       fontFamily: {
-        sans: ["Roboto", "sans-serif"],
+        sans: ["Montserrat-Regular", "sans-serif"],
+        montserratRegular: ["Montserrat-Regular", "sans-serif"],
+        montserratMedium: ["Montserrat-Medium", "sans-serif"],
+        montserratSemiBold: ["Montserrat-SemiBold", "sans-serif"],
+        montserratBold: ["Montserrat-Bold", "sans-serif"],
       },
+    },
+    fontFamily: {
+      sans: ["Montserrat-Regular", "sans-serif"],
     },
   },
   plugins: [],
