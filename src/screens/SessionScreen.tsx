@@ -13,6 +13,8 @@ import { Icon } from "@rneui/themed";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react";
 import { Image, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+
 export default function SessionScreen({ navigation }) {
   const [selected, setSelected] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState(false);
@@ -122,71 +124,90 @@ export default function SessionScreen({ navigation }) {
       {/* session teams */}
       {/* team 01 */}
       <View className="my-5 gap-5">
-        <View className="bg-[#F4F4F4] p-5 rounded-lg">
-          <View className="flex-row items-center gap-2">
-            <Icon name="users" type="font-awesome" color="#f97e4b" />
-            <String variant="secondary">Equipe A</String>
-          </View>
-          <View className="flex-row items-center justify-between mt-5 gap-10">
-            <View className="flex-1 h-20">
-              <Image
-                source={sessionGroupPeople}
-                resizeMode="contain"
-                className="w-full h-full"
-              />
+        <LinearGradient
+          colors={["#FF9C4E", "#FE5F3C"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{ borderRadius: 8, padding: 10 }}
+        >
+          <View>
+            <View className="flex-row items-center gap-2">
+              <Icon name="users" type="font-awesome" color="white" />
+              <String variant="white">Equipe A</String>
             </View>
-            <View className="flex-row items-center gap-2 border border-[#178278] px-3 py-2 rounded-full">
-              <String className="text-[#178278]" weight="bold" size="sm">
-                Selectionner
-              </String>
-              <Checkbox
-                color="#178278"
-                onValueChange={() => {
-                  if (selected) {
-                    setSelected(false);
-                  } else {
-                    setSelected(true);
-                    setSelectedTeam(false);
-                  }
-                }}
-                value={selected}
-              />
+            <View className="flex-row items-center justify-between mt-5 gap-10">
+              <View className="flex-1 h-20">
+                <Image
+                  source={sessionGroupPeople}
+                  resizeMode="contain"
+                  className="w-full h-full"
+                />
+              </View>
+              <View className="flex-row items-center gap-2 border border-white px-3 py-2 rounded-full">
+                <String className="text-white" weight="bold" size="sm">
+                  Selectionner
+                </String>
+                <View className="border border-white">
+                  <Checkbox
+                    color="transparent"
+                    onValueChange={() => {
+                      if (selected) {
+                        setSelected(false);
+                      } else {
+                        setSelected(true);
+                        setSelectedTeam(false);
+                      }
+                    }}
+                    value={selected}
+                  />
+                </View>
+              </View>
             </View>
           </View>
-        </View>
+        </LinearGradient>
+
         {/* team 02 */}
-        <View className="bg-[#F4F4F4] p-5 rounded-lg">
-          <View className="flex-row items-center gap-2">
-            <Icon name="users" type="font-awesome" color="#f97e4b" />
-            <String variant="secondary">Equipe B</String>
-          </View>
-          <View className="flex-row items-center justify-between mt-5 gap-10">
-            <View className="flex-1 h-20">
-              <Image
-                source={sessionGroupPeople}
-                resizeMode="contain"
-                className="w-full h-full"
-              />
+        <LinearGradient
+          colors={["#FF9C4E", "#FE5F3C"]}
+          start={{ x: 0, y: 0 }}
+          end={{ x: 1, y: 0 }}
+          style={{ borderRadius: 8, padding: 10 }}
+        >
+          <View>
+            <View className="flex-row items-center gap-2">
+              <Icon name="users" type="font-awesome" color="white" />
+              <String variant="white">Equipe A</String>
             </View>
-            <View className="flex-row items-center gap-2 border border-[#178278] px-3 py-2 rounded-full">
-              <String className="text-[#178278]" weight="bold" size="sm">
-                Selectionner
-              </String>
-              <Checkbox
-                color="#178278"
-                onValueChange={() => {
-                  if (selectedTeam) {
-                    setSelectedTeam(false);
-                  } else {
-                    setSelectedTeam(true);
-                    setSelected(false);
-                  }
-                }}
-                value={selectedTeam}
-              />
+            <View className="flex-row items-center justify-between mt-5 gap-10">
+              <View className="flex-1 h-20">
+                <Image
+                  source={sessionGroupPeople}
+                  resizeMode="contain"
+                  className="w-full h-full"
+                />
+              </View>
+              <View className="flex-row items-center gap-2 border border-white px-3 py-2 rounded-full">
+                <String className="text-white" weight="bold" size="sm">
+                  Selectionner
+                </String>
+                <View className="border border-white">
+                  <Checkbox
+                    color="transparent"
+                    onValueChange={() => {
+                      if (selectedTeam) {
+                        setSelectedTeam(false);
+                      } else {
+                        setSelectedTeam(true);
+                        setSelected(false);
+                      }
+                    }}
+                    value={selectedTeam}
+                  />
+                </View>
+              </View>
             </View>
           </View>
-        </View>
+        </LinearGradient>
       </View>
       {/* button */}
       <Button
