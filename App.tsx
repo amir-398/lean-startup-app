@@ -1,3 +1,4 @@
+import React from "react";
 import COLORS from "@constants/COLORS";
 import { useReactQueryDevTools } from "@dev-plugins/react-query";
 import {
@@ -6,29 +7,30 @@ import {
   Montserrat_600SemiBold,
   Montserrat_700Bold,
   useFonts,
-} from "@expo-google-fonts/poppins";
+} from "@expo-google-fonts/montserrat";
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import "@utils/fontAwesomeConfig";
 import "expo-dev-client";
-
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";
 import "./src/global.css";
 import AppNavigation from "./src/navigation/AppNavigation";
-const queryClient = new QueryClient();
-export default function App() {
-  useReactQueryDevTools(queryClient as any);
 
+const queryClient = new QueryClient();
+
+export default function App() {
   let [fontsLoaded, fontError] = useFonts({
-    montserratRegular: Montserrat_400Regular,
-    montserratMedium: Montserrat_500Medium,
-    montserratSemiBold: Montserrat_600SemiBold,
-    montserratBold: Montserrat_700Bold,
+    Montserrat_400Regular,
+    Montserrat_500Medium,
+    Montserrat_600SemiBold,
+    Montserrat_700Bold,
   });
+
   if (!fontsLoaded && !fontError) {
     return null;
   }
+
   const MyTheme = {
     ...DefaultTheme,
     colors: {
