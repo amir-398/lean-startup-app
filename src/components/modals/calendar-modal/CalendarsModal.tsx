@@ -1,4 +1,4 @@
-import { Button, Calendar, CalendarRange } from "@components/nysaUi";
+import { Button, Calendar } from "@components/nysaUi";
 import {
   Dialog,
   DialogContent,
@@ -53,23 +53,10 @@ export default function CalendarModal({
       <DialogTrigger setVisible={setVisible}>{children}</DialogTrigger>
       <DialogContent visible={visible} setVisible={setVisible} closeMark>
         <View className="mt-2 mb-5">
-          {type === "single" && (
-            <Calendar
-              selectedDate={selectedDate}
-              setSelectedDate={setSelectedDate}
-            />
-          )}
-          {type === "range" && (
-            <CalendarRange
-              setDateRange={setDateRange}
-              defaultValues={
-                defaultValues as {
-                  startDate: string;
-                  endDate: string | undefined;
-                }
-              }
-            />
-          )}
+          <Calendar
+            selectedDate={selectedDate}
+            setSelectedDate={setSelectedDate}
+          />
         </View>
         <Button
           title="Confirmer"

@@ -1,11 +1,13 @@
 import { Button, String, Wrapper } from "@/components/nysaUi";
 import { confirmationSessionImg, peopleImg } from "@assets/images";
 import { Icon } from "@rneui/themed";
-import React from "react";
-import { Image, View } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
+import React, { useState } from "react";
+import { Image, View } from "react-native";
+import JoinedModal from "./JoindedModal";
 
 export default function SessionConfirmation() {
+  const [modalIsVisible, setModalIsVisible] = useState(false);
   return (
     <Wrapper className="bg-white" scrollView>
       {/* header */}
@@ -130,10 +132,15 @@ export default function SessionConfirmation() {
                 </View>
               </View>
             </View>
-            <View className=" flex h-16 flex-row w-full px-1 border border-gray-500 rounded-xl mt-3">
+            <View className=" flex h-16 flex-row w-full px-1 mt-3">
+              <JoinedModal
+                visible={modalIsVisible}
+                setVisible={setModalIsVisible}
+              />
               <Button
                 title="Confirmer"
                 btnClassName="bg-[#FE5F3C] flex-1 h-4/5"
+                onPress={() => setModalIsVisible(true)}
               />
               <Button
                 title="Annuler"

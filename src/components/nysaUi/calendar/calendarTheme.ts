@@ -1,6 +1,6 @@
 import FONTS from "@constants/FONTS";
 import { CalendarTheme } from "@marceloterreiro/flash-calendar";
-const calendarColor = "#FF6D32";
+const calendarColor = "#FFA24A";
 const borderRadius = 20;
 
 export const calendarTheme: CalendarTheme = {
@@ -36,7 +36,7 @@ export const calendarTheme: CalendarTheme = {
         borderRadius: borderRadius,
       },
       content: {
-        color: isWeekend && !isPressed ? "rgba(0, 0, 0, 0.8)" : "#000",
+        color: isWeekend && !isPressed ? "#000" : "#000",
       },
     }),
     today: ({ isPressed }) => ({
@@ -47,7 +47,7 @@ export const calendarTheme: CalendarTheme = {
         backgroundColor: isPressed ? calendarColor : "transparent",
       },
       content: {
-        color: isPressed ? "#fff" : "#000",
+        color: isPressed ? "#ffffff" : "rgba(255, 255, 255, 0.5)",
       },
     }),
     active: ({ isEndOfRange, isStartOfRange }) => ({
@@ -60,7 +60,7 @@ export const calendarTheme: CalendarTheme = {
         borderBottomRightRadius: isEndOfRange ? borderRadius : 0,
       },
       content: {
-        color: "#ffffff",
+        color: "#000",
       },
     }),
   },

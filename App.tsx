@@ -1,6 +1,4 @@
-import React from "react";
 import COLORS from "@constants/COLORS";
-import { useReactQueryDevTools } from "@dev-plugins/react-query";
 import {
   Montserrat_400Regular,
   Montserrat_500Medium,
@@ -11,6 +9,7 @@ import {
 import { DefaultTheme, NavigationContainer } from "@react-navigation/native";
 import "@utils/fontAwesomeConfig";
 import "expo-dev-client";
+import React from "react";
 import { KeyboardProvider } from "react-native-keyboard-controller";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { QueryClient, QueryClientProvider } from "react-query";

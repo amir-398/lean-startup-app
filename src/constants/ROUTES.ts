@@ -7,4 +7,5 @@ export default {
   SESSION_CONFIRMATION_SCREEN: "Sessions_Confirmation",
   LOADING_SCREEN: "LoadingScreen",
   SUGGESTED_SESSION_SCREEN: "SuggestedSession",
+  MY_SESSION: "MySession",
 };

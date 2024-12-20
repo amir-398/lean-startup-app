@@ -14,6 +14,8 @@ export default function Calendar({
   selectedDate,
   setSelectedDate,
 }: CalendarProps) {
+  console.log("selectedDate", selectedDate);
+  const [date, setDate] = useState("2024-12-24");
   const [currentCalendarMonth, setCurrentCalendarMonth] = useState(dayjs());
   const today = toDateId(currentCalendarMonth.toDate());
 
@@ -26,7 +28,7 @@ export default function Calendar({
   }, []);
 
   return (
-    <View className="relative">
+    <View>
       <View className="absolute -top-1 right-0 w-full flex-row justify-between items-center z-10">
         <Icon name="arrow-back-ios" type="mayerial-icons" />
         <Icon name="arrow-forward-ios" type="mayerial-icons" />

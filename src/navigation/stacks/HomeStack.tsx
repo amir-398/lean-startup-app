@@ -1,4 +1,5 @@
 import LoadingScreen from "@/screens/LoadingScreen";
+import MySessionScreen from "@/screens/MySessionScreen";
 import SessionConfirmation from "@/screens/SessionConfirmation";
 import SessionScreen from "@/screens/SessionScreen";
 import SuggestedSession from "@/screens/SuggestedSession";
@@ -34,7 +35,12 @@ export default function HomeStack() {
       <Stack.Screen
         name={ROUTES.SUGGESTED_SESSION_SCREEN}
         component={SuggestedSession}
+        options={{
+          header: () => <Header screen={ROUTES.HOME_SCREEN} />,
+          headerShown: true,
+        }}
       />
+      <Stack.Screen name={ROUTES.MY_SESSION} component={MySessionScreen} />
     </Stack.Navigator>
   );
 }

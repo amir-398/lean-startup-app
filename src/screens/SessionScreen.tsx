@@ -11,9 +11,9 @@ import {
 } from "@assets/images";
 import { Icon } from "@rneui/themed";
 import Checkbox from "expo-checkbox";
+import { LinearGradient } from "expo-linear-gradient";
 import React, { useState } from "react";
 import { Image, View } from "react-native";
-import { LinearGradient } from "expo-linear-gradient";
 
 export default function SessionScreen({ navigation }) {
   const [selected, setSelected] = useState(false);
@@ -176,7 +176,7 @@ export default function SessionScreen({ navigation }) {
           <View>
             <View className="flex-row items-center gap-2">
               <Icon name="users" type="font-awesome" color="white" />
-              <String variant="white">Equipe A</String>
+              <String variant="white">Equipe B</String>
             </View>
             <View className="flex-row items-center justify-between mt-5 gap-10">
               <View className="flex-1 h-20">
