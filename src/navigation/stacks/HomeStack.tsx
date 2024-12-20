@@ -1,6 +1,7 @@
 import LoadingScreen from "@/screens/LoadingScreen";
 import SessionConfirmation from "@/screens/SessionConfirmation";
 import SessionScreen from "@/screens/SessionScreen";
+import SuggestedSession from "@/screens/SuggestedSession";
 import { Header } from "@components/components";
 import COLORS from "@constants/COLORS";
 import ROUTES from "@constants/ROUTES";
@@ -30,6 +31,10 @@ export default function HomeStack() {
         component={SessionConfirmation}
       />
       <Stack.Screen name={ROUTES.LOADING_SCREEN} component={LoadingScreen} />
+      <Stack.Screen
+        name={ROUTES.SUGGESTED_SESSION_SCREEN}
+        component={SuggestedSession}
+      />
     </Stack.Navigator>
   );
 }
