@@ -17,3 +17,7 @@ export { default as sessionUserImg5 } from "./session_user_5.png";
 export { default as sessionGroupPeople } from "./sessions_group_people.png";
 export { default as su1Img } from "./su1.png";
 export { default as su2Img } from "./su2.png";
+export { default as peopleImg } from "./people.png";
+export { default as fingerball } from "./fingerball.png";
+export { default as fml } from "./fml.png";
+export { default as fml2 } from "./fml2.png";

@@ -6,4 +6,5 @@ export default {
   PROFIL_SCREEN: "Profile",
   SESSION_CONFIRMATION_SCREEN: "Sessions_Confirmation",
   LOADING_SCREEN: "LoadingScreen",
+  SUGGESTED_SESSION_SCREEN: "SuggestedSession",
 };
