@@ -13,6 +13,7 @@ import { Icon } from "@rneui/themed";
 import Checkbox from "expo-checkbox";
 import React, { useState } from "react";
 import { Image, View } from "react-native";
+
 export default function SessionScreen({ navigation }) {
   const [selected, setSelected] = useState(false);
   const [selectedTeam, setSelectedTeam] = useState(false);

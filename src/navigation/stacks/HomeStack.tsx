@@ -1,3 +1,4 @@
+import LoadingScreen from "@/screens/LoadingScreen";
 import SessionConfirmation from "@/screens/SessionConfirmation";
 import SessionScreen from "@/screens/SessionScreen";
 import { Header } from "@components/components";
@@ -28,6 +29,7 @@ export default function HomeStack() {
         name={ROUTES.SESSION_CONFIRMATION_SCREEN}
         component={SessionConfirmation}
       />
+      <Stack.Screen name={ROUTES.LOADING_SCREEN} component={LoadingScreen} />
     </Stack.Navigator>
   );
 }
