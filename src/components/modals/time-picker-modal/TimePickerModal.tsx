@@ -1,10 +1,5 @@
-import { Button, String, TimePicker } from "@/components/nysaUi";
-import {
-  Dialog,
-  DialogContent,
-  DialogTrigger,
-} from "@components/nysaUi/dialog";
-import COLORS from "@constants/COLORS";
+import { Button, TimePicker } from "@/components/nysaUi";
+import { Dialog, DialogContent } from "@components/nysaUi/dialog";
 import FONTS from "@constants/FONTS";
 import { useEffect, useState } from "react";
 import { View } from "react-native";
@@ -13,8 +8,9 @@ import { TimePickerModalProps } from "../utils/types";
 export default function TimePickerModal({
   children,
   setFieldValue,
+  setVisible,
+  visible,
 }: TimePickerModalProps) {
-  const [visible, setVisible] = useState(false);
   const [startPartyTimePicker, setStartPartyTimePicker] = useState<
     string | null
   >(null);
@@ -38,36 +34,17 @@ export default function TimePickerModal({
   };
 
   const handleSubmit = () => {
-    if (isSubmit) {
-      setVisible(false);
-      setFieldValue(
-        "time",
-        `de ${startPartyTimePicker} à ${endPartyTimePicker}`
-      );
-      setIsSubmit(false);
-    } else {
-      console.log("not submit");
-
-      setIsSubmit(true);
-    }
+    setVisible(false);
   };
   return (
     <Dialog>
-      <DialogTrigger setVisible={setVisible}>{children}</DialogTrigger>
       <DialogContent visible={visible} setVisible={setVisible} closeMark>
         <>
-          <String position="center" size="xl">
-            Heure de{" "}
-            <String size="xl" variant="nysa" className="font-bold">
-              {timeText}
-            </String>{" "}
-            de la fête
-          </String>
           <TimePicker
             options={{
               defaultFont: FONTS.primaryFontBold,
-              textDefaultColor: "white",
-              mainColor: COLORS.btnColor,
+              textDefaultColor: "#000",
+              mainColor: "#000",
               headerFont: FONTS.primaryFontBold,
               backgroundColor: "transparent",
               textSecondaryColor: "transparent",
@@ -75,7 +52,12 @@ export default function TimePickerModal({
             onTimeChange={handlePickTime}
           />
           <View>
-            <Button title="Confirmer" onPress={handleSubmit} size="sm" />
+            <Button
+              title="Confirmer"
+              onPress={handleSubmit}
+              size="sm"
+              btnClassName="bg-[#FF6D32]"
+            />
           </View>
         </>
       </DialogContent>

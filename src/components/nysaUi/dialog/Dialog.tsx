@@ -1,7 +1,6 @@
-import { FontAwesomeIcon } from "@fortawesome/react-native-fontawesome";
-import { Modal, View, TouchableOpacity } from "react-native";
+import { Icon } from "@rneui/themed";
+import { Modal, TouchableOpacity, View } from "react-native";
 import { twMerge } from "tailwind-merge";
-import CustomIcon from "../customIcon";
 import { tv } from "tailwind-variants";
 import {
   DialogContentProps,
@@ -63,16 +62,16 @@ export function DialogContent({
         <View className="flex-1 bg-[rgba(0,0,0,0.5)] items-center justify-center">
           <View
             className={twMerge(
-              "relative rounded-xl border border-white bg-main w-5/6 p-5",
+              "relative rounded-xl border border-white bg-white w-5/6 p-5",
               dialogBg,
               closeMarkVariants({ closeMark })
             )}
           >
             {closeMark && (
               <View className="absolute right-2 top-2 z-10">
-                <CustomIcon
-                  variant="close"
-                  wrapper
+                <Icon
+                  name="close"
+                  type="ant-design"
                   onPress={() => setVisible(false)}
                 />
               </View>

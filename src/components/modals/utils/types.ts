@@ -2,7 +2,8 @@ import { AddPartyScreenFormValues } from "@/utils/types";
 
 export type CalendarsModalProps = {
   children: React.ReactNode;
-  setFieldValue: (name: string, value: any) => void;
+  setCalendarValue: (value: any) => void;
+  setHourModalVisible: (value: boolean) => void;
   type?: "single" | "range";
   defaultValues?:
     | {
@@ -15,6 +16,8 @@ export type CalendarsModalProps = {
 export type TimePickerModalProps = {
   children: React.ReactNode;
   setFieldValue: (name: string, value: any) => void;
+  setVisible: (value: boolean) => void;
+  visible: boolean;
 };
 
 export interface MapModalProps {
