@@ -24,6 +24,7 @@ const Tab = createBottomTabNavigator();
 const hideTabBarScreens = [
   ROUTES.SESSIONS_SCREEN,
   ROUTES.SESSION_CONFIRMATION_SCREEN,
+  ROUTES.LOADING_SCREEN,
 ];
 
 export default function MainNavigation() {
