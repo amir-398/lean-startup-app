@@ -89,7 +89,7 @@ export default function SessionConfirmation() {
                   <Icon
                     name="check"
                     type="font-awesome"
-                    color="transparent"
+                    color="#15803d"
                     size={15}
                   />
                   <String size="xs" className="ml-1">
@@ -97,7 +97,12 @@ export default function SessionConfirmation() {
                   </String>
                 </View>
                 <View className="flex flex-row">
-                  <Icon name="check" type="font-awesome" color="" size={15} />
+                  <Icon
+                    name="check"
+                    type="font-awesome"
+                    color="#15803d"
+                    size={15}
+                  />
                   <String size="xs" className="ml-1">
                     Tu recevras un rappel 1h avant le début du match.
                   </String>
