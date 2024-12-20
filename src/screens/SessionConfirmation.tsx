@@ -3,6 +3,8 @@ import { confirmationSessionImg, peopleImg } from "@assets/images";
 import { Icon } from "@rneui/themed";
 import React from "react";
 import { Image, View } from "react-native";
+import { LinearGradient } from "expo-linear-gradient";
+
 export default function SessionConfirmation() {
   return (
     <Wrapper className="bg-white" scrollView>
@@ -34,11 +36,19 @@ export default function SessionConfirmation() {
           </String>
         </View>
         <View className="flex-row justify-between items-center gap-4">
-          <View className="bg-[#178278] rounded-full flex-1 py-2">
-            <String variant="white" position="center">
-              Aujour'hui- 16h
-            </String>
-          </View>
+          <LinearGradient
+            colors={["#FF9C4E", "#FE5F3C"]}
+            start={{ x: 0, y: 0 }}
+            end={{ x: 1, y: 0 }}
+            style={{ borderRadius: 36, padding: 3 }}
+          >
+            <View className=" flex-1 py-2">
+              <String variant="white" position="center">
+                Aujour'hui- 16h
+              </String>
+            </View>
+          </LinearGradient>
+
           <View className="border border-black rounded-full flex-1 py-2">
             <String variant="dark" position="center">
               Durée : 1h
@@ -56,10 +66,10 @@ export default function SessionConfirmation() {
               <Icon
                 name="users"
                 type="font-awesome"
-                color="#f97e4b"
+                color="#FE5F3C"
                 className="mr-1"
               />
-              <String variant="secondary">Team A</String>
+              <String className="text-[#FE5F3C]">Team A</String>
             </View>
           </View>
           <View className="flex justify-start items-center">
@@ -120,7 +130,7 @@ export default function SessionConfirmation() {
                 </View>
               </View>
             </View>
-            <View className=" flex h-16 flex-row w-full p-1 border border-gray-500 rounded-xl mt-3">
+            <View className=" flex h-16 flex-row w-full px-1 border border-gray-500 rounded-xl mt-3">
               <Button
                 title="Confirmer"
                 btnClassName="bg-[#FE5F3C] flex-1 h-4/5"
