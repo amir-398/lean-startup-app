@@ -1,21 +1,21 @@
-import { View } from "react-native";
-import { useState } from "react";
-import { Calendar, CalendarRange } from "@components/nysaUi";
+import { Button, Calendar, CalendarRange } from "@components/nysaUi";
 import {
   Dialog,
   DialogContent,
   DialogTrigger,
 } from "@components/nysaUi/dialog";
-import { Button } from "@components/nysaUi";
 import { CalendarActiveDateRange } from "@marceloterreiro/flash-calendar";
 import { formatDate } from "@utils/time";
+import { useState } from "react";
+import { View } from "react-native";
 import { CalendarsModalProps } from "../utils/types";
 
 export default function CalendarModal({
   children,
-  setFieldValue,
+  setCalendarValue,
   type = "single",
   defaultValues,
+  setHourModalVisible,
 }: CalendarsModalProps) {
   const [selectedDate, setSelectedDate] = useState<string | null>(null);
   const [dateRange, setDateRange] = useState<CalendarActiveDateRange | null>(
@@ -27,10 +27,11 @@ export default function CalendarModal({
   const handleSubmit = () => {
     if (type === "single") {
       const formattedDate = formatDate(selectedDate, "DD/MM/YYYY");
-      setFieldValue("date", formattedDate);
+      setCalendarValue(formattedDate);
+      setHourModalVisible(true);
     } else {
-      setFieldValue("date.startDate", dateRange.startId);
-      setFieldValue("date.endDate", dateRange.endId);
+      setCalendarValue(dateRange.startId);
+      setCalendarValue(dateRange.endId);
     }
     setVisible(false);
   };
@@ -74,7 +75,7 @@ export default function CalendarModal({
           title="Confirmer"
           onPress={handleSubmit}
           size="sm"
-          disabled={handleDisabledBtn()}
+          btnClassName="bg-[#FF6D32]"
         />
       </DialogContent>
     </Dialog>

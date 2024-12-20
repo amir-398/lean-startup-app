@@ -1,13 +1,13 @@
-import { View } from "react-native";
-import { useCallback, useState } from "react";
-import CustomIcon from "../customIcon/CustomIcon";
+import { getTodayDate } from "@/utils/time";
 import {
   Calendar as FlashCalendar,
   toDateId,
 } from "@marceloterreiro/flash-calendar";
+import { Icon } from "@rneui/themed";
 import dayjs from "dayjs";
+import { useCallback, useState } from "react";
+import { View } from "react-native";
 import { CalendarProps } from "../utils/types";
-import { getTodayDate } from "@/utils/time";
 import { calendarTheme } from "./calendarTheme";
 
 export default function Calendar({
@@ -28,19 +28,8 @@ export default function Calendar({
   return (
     <View className="relative">
       <View className="absolute -top-1 right-0 w-full flex-row justify-between items-center z-10">
-        <CustomIcon
-          variant="arrow-left"
-          size="sm"
-          onPress={handlePreviousMonth}
-          wrapper
-        />
-
-        <CustomIcon
-          variant="arrow-right"
-          size="sm"
-          onPress={handleNextMonth}
-          wrapper
-        />
+        <Icon name="arrow-back-ios" type="mayerial-icons" />
+        <Icon name="arrow-forward-ios" type="mayerial-icons" />
       </View>
       <FlashCalendar
         calendarActiveDateRanges={[

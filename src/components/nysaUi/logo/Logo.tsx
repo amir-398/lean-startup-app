@@ -5,7 +5,7 @@ import { tv } from "tailwind-variants";
 interface LogoProps {
   className?: string;
   position?: "left" | "center" | "right";
-  size?: "xs" | "sm" | "md" | "lg";
+  size?: "2xs" | "xs" | "sm" | "md" | "lg";
   mt?: 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10;
 }
 const logoPositionVariants = tv({
@@ -22,6 +22,7 @@ const logoPositionVariants = tv({
 const sizeVariants = tv({
   variants: {
     size: {
+      "2xs": "w-24 h-12",
       xs: "w-32 h-16",
       sm: "w-48 h-24",
       md: "w-60 h-28",

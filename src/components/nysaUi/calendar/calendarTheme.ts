@@ -1,7 +1,6 @@
-import { CalendarTheme } from "@marceloterreiro/flash-calendar";
-import COLORS from "@constants/COLORS";
 import FONTS from "@constants/FONTS";
-const calendarColor = COLORS.primaryColor;
+import { CalendarTheme } from "@marceloterreiro/flash-calendar";
+const calendarColor = "#FF6D32";
 const borderRadius = 20;
 
 export const calendarTheme: CalendarTheme = {
@@ -9,7 +8,7 @@ export const calendarTheme: CalendarTheme = {
   rowMonth: {
     content: {
       fontFamily: FONTS.primaryFontMedium,
-      color: "#fff",
+      color: "#000",
     },
   },
   // row week
@@ -37,7 +36,7 @@ export const calendarTheme: CalendarTheme = {
         borderRadius: borderRadius,
       },
       content: {
-        color: isWeekend && !isPressed ? "rgba(255, 255, 255, 0.5)" : "#ffffff",
+        color: isWeekend && !isPressed ? "rgba(0, 0, 0, 0.8)" : "#000",
       },
     }),
     today: ({ isPressed }) => ({
@@ -48,7 +47,7 @@ export const calendarTheme: CalendarTheme = {
         backgroundColor: isPressed ? calendarColor : "transparent",
       },
       content: {
-        color: isPressed ? "#ffffff" : "rgba(255, 255, 255, 0.5)",
+        color: isPressed ? "#fff" : "#000",
       },
     }),
     active: ({ isEndOfRange, isStartOfRange }) => ({
